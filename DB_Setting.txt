@@ -1,0 +1,25 @@
+Steps to create database for this application:
+1. Create a new MySQL db with name "AppDB"
+2. Create a new table with name "Tasks" in "AppDB" database.
+3. "Tasks" table should have two fields with following properties:
+- "id" - integer, auto increment, primary key
+- "tasks" - Varchar(80), not null
+
+If you wish to modify db related settings, the same changes should be reflected in data.php in the following code sequence.
+
+	$res = mysql_connect ("localhost", "root", "");
+	mysql_select_db ("AppDB");
+	$data->render_table ("Tasks","id","task");
+
+mysql_connect parameters:
+localhost - MySQL server is hosted on my local machine.
+root - Username for MySQL 
+"" - Empty password (can be different for you).
+
+mysql_select_db parameters:
+AppDB - name of the selected database.
+
+render_table parameters:
+Tasks - selected table name on which you want to perform CRUD operations.
+id - primary key of the table
+task - the associated column on which you want to perform CRUD operations.
